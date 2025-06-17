@@ -1,10 +1,10 @@
-FROM jekyll/jekyll:latest as build
+FROM jekyll/jekyll:latest AS build
 
 WORKDIR /srv/jekyll
 
 ADD . /srv/jekyll
 
-RUN gem install bundler && \
+RUN gem install bundler 2.5.15 && \
     rm -rf Gemfile.lock && \
     chmod -R 777 ${PWD} && \
     bundle update && \

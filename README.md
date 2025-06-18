@@ -19,6 +19,10 @@ If you have docker, you can go for
 1. docker-compose build
 2. docker-compose up
 
+## Windows users
+
+Get the way to install Ruby and support Jekyll. For some reason, the containerization is not working on Docker for Windows 4.41.2 and earlier
+
 ## Github pages
 
 Integrating CI/CD for master branch comming soon

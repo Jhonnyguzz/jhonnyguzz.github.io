@@ -2,6 +2,8 @@
 
 This Jekyll template is a fork from [devlopr jekyll](https://github.com/sujaykundu777/devlopr-jekyll) Stay tuned for updates!
 
+This version has removed hosting support and it's pretended to be used in static servers and github pages
+
 ## How to run
 
 Unix OS systems
@@ -20,3 +22,11 @@ If you have docker, you can go for
 ## Github pages
 
 Integrating CI/CD for master branch comming soon
+
+## TODO
+
+- Explore mailchimp for emails
+- Explore Snipcart for sell stuff
+- Explore jekyll-admin (Incompatible with github-pages)
+- Optimize SEO
+- Contact form

@@ -1,20 +1,15 @@
-FROM jekyll/jekyll:latest AS build
+FROM ruby:3.3
+
+RUN apt-get update && \
+    apt-get install -y build-essential libpq-dev libffi-dev nodejs && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /srv/jekyll
 
-ADD . /srv/jekyll
+COPY Gemfile Gemfile.lock ./
 
-RUN gem install bundler 2.5.15 && \
-    rm -rf Gemfile.lock && \
-    chmod -R 777 ${PWD} && \
-    bundle update && \
-    bundle install
-    # jekyll build && \
-    # jekyll serve --livereload --drafts --trace
+RUN gem install bundler && bundle install
 
-ARG build_command
-ENV BUILD_COMMAND ${build_command}
+COPY . . 
 
-CMD ${BUILD_COMMAND}
-
-# EXPOSE 4000
+CMD ["bundle", "exec", "jekyll", "serve", "--watch", "--force_polling", "--host", "0.0.0.0"]

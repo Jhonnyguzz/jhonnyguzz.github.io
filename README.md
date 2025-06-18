@@ -30,3 +30,4 @@ Integrating CI/CD for master branch comming soon
 - Explore jekyll-admin (Incompatible with github-pages)
 - Optimize SEO
 - Contact form
+- Wakatime for coding activity

@@ -2,9 +2,7 @@ name: Deploy Jekyll Site
 
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build-deploy:
@@ -20,7 +18,7 @@ jobs:
           bundler-cache: true
 
       - name: Install dependencies
-        run: bundle Install
+        run: bundle install
       
       - name: Build Jekyll site
         run: bundle exec jekyll build
